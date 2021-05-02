@@ -33,7 +33,7 @@ Add this file to run the same time every day ( dailyMessage.js ).
 To do this:  
 ```crontab -e`  
 Add Line at the end of file:  
-```0 19 * * * node /home/pi/workspace/discordWork/nodeJSWork/dailyMessage.js```  
+```0 19 * * * node /home/pi/workspace/discordFitnessBot/BotScripts/dailyMessage.js```  
 This line is in the format {minute}{hour}{day of the month}{months of the year}{day of the week}{command}  
 This task is run every day at the 19th hour of the day (7pm)  
 
@@ -41,7 +41,7 @@ This task is run every day at the 19th hour of the day (7pm)
 We want the bot script to always be running, so we should startup on reboot  
 ```crontab -e`  
 Add Line at the end of file:  
-```@reboot node /home/pi/workspace/discordWork/nodeJSWork/bot.js &```  
+```@reboot node /home/pi/workspace/discordFitnessBot/BotScripts/bot.js &```  
 
 Sources shamelessly used ( with creative modification ):  
 https://ourcodeworld.com/articles/read/580/  how-to-convert-images-to-text-with-pure-javascript-using-tesseract-js  
