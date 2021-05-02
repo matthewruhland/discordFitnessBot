@@ -1,0 +1,31 @@
+{
+    "tag": "greeting",
+    "dailyMessages": [
+        "Hello here! *read in Obi-Wan voice*\n Send me your food logs!",
+        "Don't forget to send me your food logs!",
+        "I know you are slacking! Send food logs.",
+        "Send Food Logs.",
+        "How did your day go? Don't forget Food Logs!"
+    ],
+    "responses": [
+        "Hello!",
+        "Good to see you again!",
+        "Hi there, how can I help?"
+    ],
+    "positiveEmojis": [
+        "\\:muscle:",
+        "\\:thumbsup:",
+        "\\:tada:",
+        "\\:carrot:",
+        "\\:broccoli:",
+        "\\:fire:",
+        "\\:star:",
+        "\\:100:"
+    ],
+    "negativeEmojis": [
+        "Hello!",
+        "Good to see you again!",
+        "Hi there, how can I help?"
+    ],
+    "context_set": ""
+}
