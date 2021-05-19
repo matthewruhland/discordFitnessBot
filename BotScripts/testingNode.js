@@ -122,6 +122,13 @@ function processImageToText(msg, callback) {
                 console.log("ready");
                 const { data: { text } } = await worker.recognize(img);
                 console.log(text);
+                fs.writeFile(filePaths.outFile, text, function (err,data) {
+                    if (err) {
+                      return console.log(err);
+                    }
+                    console.log(data);
+                  });
+                fs.writeFile(filePaths.outFile, text);
                 getEssentials(text);
                 // sendInfoBackToUser(msg);
             } else {
@@ -136,7 +143,7 @@ function processImageToText(msg, callback) {
 
 
 processImageToText()
-findValuableInfo()
+// findValuableInfo()
 // arrayMapPair()
 
 
