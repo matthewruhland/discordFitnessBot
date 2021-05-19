@@ -1,15 +1,12 @@
 // DON'T USE THIS FILE FOR ANYTHING, THIS WAS ONLY TO TEST SMALLER PARTS OF CODE INSTEAD OF USING THE BOT
 
-
-
-
-
 let fs = require('fs');
-let tesseract = require('node-tesseract-ocr')
+const { createWorker } = require('tesseract.js');
+let isReady = false;
 
 const filePaths = {
-    imgSavePath: './img/FitBitLogTemp.jpg',
-    outFile: './img/FitBitLog.txt'
+    imgSavePath: './BotScripts/img/loseit2.PNG',
+    outFile: './BotScripts/img/loseitLog.txt'
 }
 
 
@@ -104,5 +101,42 @@ function arrayMapPair(data) {
     })
 }
 
+
+// Image Processing for ** Fitbit Specific Food Log **
+function processImageToText(msg, callback) {
+    const worker = createWorker();
+
+    let isReady = false;
+    // Called as early as possible
+    (async () => {
+        await worker.load();
+        await worker.loadLanguage('eng');
+        await worker.initialize('eng');
+        isReady = true;
+    })();
+
+    const doOCR = (img) => {
+        const timer = setInterval(async () => {
+            if (isReady) {
+                clearInterval(timer);
+                console.log("ready");
+                const { data: { text } } = await worker.recognize(img);
+                console.log(text);
+                getEssentials(text);
+                // sendInfoBackToUser(msg);
+            } else {
+                console.log("not ready");
+            }
+        }, 500)
+    };
+    doOCR(filePaths.imgSavePath);
+}
+
+
+
+
+processImageToText()
 findValuableInfo()
 // arrayMapPair()
+
+

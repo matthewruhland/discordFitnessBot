@@ -10,9 +10,13 @@ This app will currently only work with fitbit food logs.
 More updates may come in the future for other food logging apps.  
 
 ## How to Run
-```npm  start```
+```npm  install```  
+```npm  start```  
+Note: ```npm start``` will not run until your own config.json file is created.  
+I did not include one here because the info in the config.json is private, see below.  
 ### Find Discord Channel ID and Token
 You can find the channelId and token of your discord channel in the web interface.  
+https://discordapp.com/developers/applications/
 
 node <fileNameOfChoice>
 eg. ```node bot.js```  
@@ -47,3 +51,4 @@ Sources shamelessly used ( with creative modification ):
 https://ourcodeworld.com/articles/read/580/  how-to-convert-images-to-text-with-pure-javascript-using-tesseract-js  
 https://medium.com/quantrium-tech/  installing-and-using-tesseract-4-on-windows-10-4f7930313f82  
 https://www.raspberrypi.org/documentation/linux/usage/cron.md  
+https://www.writebots.com/discord-bot-token/

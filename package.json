@@ -5,7 +5,7 @@
   "main": "bot.js",
   "scripts": {
     "start": "node .\\BotScripts\\bot.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node .\\BotScripts\\testingNode.js"
   },
   "author": "",
   "license": "ISC",
